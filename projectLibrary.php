@@ -7,13 +7,9 @@
     
     $sql = "SELECT * FROM reviews_list;"; 
 
-    //prepare 
     $statement = $db->prepare($sql); 
 
-    //execute 
     $statement->execute(); 
-
-    //use fetchAll to store results 
 
     $records = $statement->fetchAll();
     
@@ -22,7 +18,7 @@
 
     foreach($records as $record) {
         echo "<tr><td >" . $record['nick_name'] . "</td><td>" . $record['game_name'] . "</td><td>" . $record['rate_game'] 
-        ."</td><td>". $record['review_game'] . "</td>'<td><a href='projectDelete.php?id=". $record['post_id'] . "'> Delete</a></td>'<td><a href='projectEdit.php?id=". $record['post_id'] . "'> Edit</a></td>'</tr>"; 
+        ."</td><td>". $record['review_game'] . "</td>'<td><a id='delBut' href='projectDelete.php?id=". $record['post_id'] . "'> Delete</a></td>'<td><a id='editBut' href='projectEdit.php?id=". $record['post_id'] . "'> Edit</a></td>'</tr>"; 
     }
 
     echo "</tbody></table>"; 

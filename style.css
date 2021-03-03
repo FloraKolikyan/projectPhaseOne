@@ -1,8 +1,10 @@
 body {
+    font-family: 'Open Sans', sans-serif;
     background-color: lightblue;
     background-image: url(Wiki-background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
 .colorerror{
     text-align: center;
@@ -22,4 +24,42 @@ nav>div>ul{
 }
 nav>div>ul>li>a{
     color:white;
+}
+footer{
+    background-color: cornsilk;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+}
+footer:hover{
+    background-color: rgb(220, 255, 222);
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    color: purple;
+}
+#delBut{
+    text-decoration: none;
+    background-color: crimson;
+    color: white;
+    border-style: solid;
+}
+#editBut{
+    text-decoration: none;
+    background-color: rgba(146, 211, 41, 0.658);
+    color: white;
+    border-style: solid;
+}
+#subBut{
+    display: flex;
+    justify-content: flex-end;
+}
+#subBut>input{
+    width:100px;
+    background-color: darkgreen;
+}
+#subBut>input:hover{
+    width:100px;
+    background-color: cornsilk;
+    color: darkgreen;
 }
