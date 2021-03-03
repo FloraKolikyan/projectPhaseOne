@@ -1,0 +1,25 @@
+body {
+    background-color: lightblue;
+    background-image: url(Wiki-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.colorerror{
+    text-align: center;
+    background-color: rgb(156, 27, 27);
+    color: white;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+nav>div>ul{
+    display: flex;
+    list-style-type: none;
+    background-color:lightseagreen;
+    border-style: groove;
+}
+nav>div>ul>li>a{
+    color:white;
+}
