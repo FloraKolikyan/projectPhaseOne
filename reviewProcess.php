@@ -7,7 +7,7 @@
     $rateGame = filter_input(INPUT_POST, 'rate', FILTER_VALIDATE_INT); 
     $reviewGame = filter_input(INPUT_POST, 'review'); 
     
-
+    //create final validator
     $finalcheck = true; 
 
     
@@ -22,31 +22,23 @@
     
     if($finalcheck === true) {
         
-         try {
+        require('projectDataBase.php');
             
-            require('projectDataBase.php');
-            
-            $sql = "INSERT INTO reviews_list (nick_name, game_name, rate_game, review_game) VALUES (:nickname, :gamename, :rategame, :reviewgame);"; 
-            
-            $statement = $db->prepare($sql);
-            
-            $statement->bindParam(':nickname', $nickName);
-            $statement->bindParam(':gamename', $gameName); 
-            $statement->bindParam(':rategame', $rateGame); 
-            $statement->bindParam(':reviewgame', $reviewGame); 
-            
-            
-            $statement->execute();
-            
-            $statement->closeCursor(); 
-            header("location:projectLibrary.php");
-        }
-        catch(PDOException $e) {
-            echo "<p> Something went wrong! Sorry :( </p>"; 
-            $error_message = $e->getMessage(); 
-            echo $error_message; 
-        }
-       
+        $sql = "INSERT INTO reviews_list (nick_name, game_name, rate_game, review_game) VALUES (:nickname, :gamename, :rategame, :reviewgame);"; 
+        
+        $statement = $db->prepare($sql);
+        
+        $statement->bindParam(':nickname', $nickName);
+        $statement->bindParam(':gamename', $gameName); 
+        $statement->bindParam(':rategame', $rateGame); 
+        $statement->bindParam(':reviewgame', $reviewGame); 
+        
+        
+        $statement->execute();
+        
+        $statement->closeCursor(); 
+        header("location:projectLibrary.php");
+              
     }
     
     require('projectFooter.php');

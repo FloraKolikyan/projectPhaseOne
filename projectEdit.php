@@ -12,7 +12,7 @@ ob_start();
     // :id - parameter where will be new input; $id - value;
     $statement->bindParam(':id',$id);
     $statement->execute();
-    //use fetchAll to store results 
+    //use fetch to store results which should be edited
 
     $records = $statement->fetch(PDO::FETCH_ASSOC);
     
@@ -29,7 +29,8 @@ ob_start();
                                      
                     <div class="form-group">
                         <label for="nick_name"></label>
-                        <input type="text" id="nick_name" name="nick_name" placeholder="Nickname" class="form-control" value="<?php echo $records['nick_name']; ?>">
+                        <!--value="php echo $records['']; needs to show previous records and edit them -->
+                        <input type="text" id="nick_name" name="nick_name" placeholder="Nickname" class="form-control" value="<?php echo $records['nick_name']; ?>"> 
                     </div>
                     <div class="form-group">
                         <label for="game_name"></label>
@@ -43,7 +44,7 @@ ob_start();
                         <label for="review_game"></label>
                         <textarea id="review_game" name="review_game" placeholder="Review" class="form-control  input-lg" rows="10" cols="30" value="<?php echo $records['review_game']; ?>"></textarea>
                     </div>
-                    <div>
+                    <div id="subBut">
                         <input type="submit" value="submit" name="submit" class="btn btn-primary">
                     </div>
                 </ul>
