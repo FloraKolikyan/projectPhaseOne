@@ -12,7 +12,20 @@
     $statement->execute(); 
 
     $records = $statement->fetchAll();
-    
+    ?>
+    <main>
+    <div class="container">
+    <form  action="projectSearch.php">
+        <div class="form-group w-50">
+            <div class="form-inline">
+                <input type="search" id="searchbox" name="searchbox" placeholder="Search" class="form-control">
+                <input type="submit" value="submit" name="submit" class="btn btn-dark">
+            </div>
+        </div>
+    </form>
+    </div>
+</main>
+<?php
     //creating the top of the table 
     echo "<table class='table table-dark table-sm'><thead> <tr><td style='width:200px' > Users' nicknames</td><td style='width:200px' > Game name </td><td style='width:100px'> Rate (1-10)</td><td style='width:600px'>Games' review</td></tr> </thead><tbody>"; 
 
