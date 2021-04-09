@@ -35,6 +35,7 @@ require('projectHeader.php');
                         <label for="Review"></label>
                         <textarea name="review" placeholder="Review" class="form-control  input-lg" rows="10" cols="30" ></textarea>
                     </div>
+                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                     <div id="subBut" >
                         <input type="submit" value="submit" name="submit" class="btn btn-primary">
                     </div>
@@ -44,5 +45,14 @@ require('projectHeader.php');
         
     </main>
 <?php
+    include_once('configcaptcha.php');
     require('projectFooter.php');
 ?>
+<script src="https://www.google.com/recaptcha/api.js?render=<?= SITEKEY ?>"></script>
+    <script>
+      grecaptcha.ready(() => {
+        grecaptcha.execute("<?= SITEKEY ?>", { action: "projectLibraryForm.php" })
+        .then(token => document.querySelector("#recaptchaResponse").value = token)
+        .catch(error => console.error(error));
+      });
+    </script>
