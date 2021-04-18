@@ -3,21 +3,16 @@ require('projectHeader.php');
 //create empty vars for new rows
     $id=null;
     $nickname=null;
-    $gamename=null;
-    $rate=null;
-    $review=null;
-    ob_start();
-    if(!isset($_SESSION['user'])) {
-        header("Location: login.php");
-        $_SESSION['unauthorizedAccess'] = 'Please log in at first';
-        exit();
-    }
+    $fname=null;
+    $lname=null;
+    $useremail=null;
+    $userpassword=null;
 
 ?>
 
 
     <main>
-        <form action="reviewProcess.php" method="post">
+        <form action="registrationProcess.php" method="post">
             <div>
                 <ul>
                     <div class="form-group">
@@ -27,19 +22,23 @@ require('projectHeader.php');
                                      
                     <div class="form-group">
                         <label for="nickname"></label>
-                        <input type="text" name="nickname" placeholder="Nickname" class="form-control" >
+                        <input type="text" name="nickname" id="nickname" placeholder="Nickname" class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label for="gamename"></label>
-                        <input type="text" name="gamename" placeholder="Game's name" class="form-control">
+                        <label for="fname"></label>
+                        <input type="text" name="fname" id="fname" placeholder="First name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="rate"></label>
-                        <input type="number" name="rate" placeholder="Rate (1-10)" class="form-control" >
+                        <label for="lname"></label>
+                        <input type="text" name="lname" id="lname" placeholder="Last name" class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label for="Review"></label>
-                        <textarea name="review" placeholder="Review" class="form-control  input-lg" rows="10" cols="30" ></textarea>
+                        <label for="useremail"></label>
+                        <input type="email" name="useremail" id="useremail" placeholder="Email" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="userpassword"></label>
+                        <input type="password" name="userpassword" id="userpassword" placeholder="Password" class="form-control" >
                     </div>
                     <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                     <div id="subBut" >
