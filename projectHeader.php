@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php
+  session_start();
+  ?>
     <div class="container">
     
         <header>
@@ -19,7 +22,7 @@
                 <div class="d-flex justify-content-center">
                     <ul>
                         <li>
-                            <a class="nav-link" href=""> Main Page </a>
+                            <a class="nav-link" href="projectAccount.php">Account</a>
                         </li>
                         <li>
                             <a class="nav-link" href="projectLibrary.php">Games' Reviews Library</a>
@@ -27,14 +30,9 @@
                         <li>
                             <a class="nav-link" href="projectLibraryForm.php">Create game review</a>
                         </li>
-                        <li>
-                            <a class="nav-link" href="">Forum</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="">Account</a>
-                        </li>
                     </ul>
                 </div>
             </nav>
         </header>
+        
         
